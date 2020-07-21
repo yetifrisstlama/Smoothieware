@@ -210,7 +210,7 @@ void ST7565::clear()
 void ST7565::send_pic(const unsigned char *data)
 {
     for (int i = 0; i < LCDPAGES; i++) {
-        set_xy(0, i);
+        set_xy(0+4, i);
         send_data(data + i * LCDWIDTH, (is_sh1106)?LCDWIDTH_SH1106:LCDWIDTH);
     }
 }
